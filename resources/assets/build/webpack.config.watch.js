@@ -1,7 +1,7 @@
 const url = require("url");
 const webpack = require("webpack");
 const BrowserSyncPlugin = require("browsersync-webpack-plugin");
-
+const untildify = require("untildify");
 const config = require("./config");
 
 const target = process.env.DEVURL || config.devUrl;
@@ -31,7 +31,15 @@ module.exports = {
       open: config.open,
       proxyUrl: config.proxyUrl,
       watch: config.watch,
-      delay: 500
+      delay: 500,
+      advanced: {
+        browserSync: {
+          https: {
+            key: untildify(config.devSsl.key),
+            cert: untildify(config.devSsl.crt)
+          }
+        }
+      }
     })
   ]
 };
