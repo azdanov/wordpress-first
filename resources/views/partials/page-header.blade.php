@@ -1,3 +1,7 @@
+@php
+  $title = App\Controllers\App::title();
+@endphp
+
 <div class="page-header">
-  <h1>{!! App::title() !!}</h1>
+  <h1>{{ $title }}</h1>
 </div>
