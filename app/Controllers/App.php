@@ -1,22 +1,35 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
+use function get_bloginfo;
+use function get_search_query;
+use function get_the_archive_title;
+use function get_the_title;
+use function is_404;
+use function is_archive;
+use function is_home;
+use function is_search;
+use function sprintf;
 
-class App extends Controller
+final class App extends Controller
 {
-    public function siteName()
+    public function siteName(): string
     {
         return get_bloginfo('name');
     }
 
-    public static function title()
+    public static function title(): string
     {
         if (is_home()) {
-            if ($home = get_option('page_for_posts', true)) {
+            $home = get_option('page_for_posts', true);
+            if ($home) {
                 return get_the_title($home);
             }
+
             return __('Latest Posts', 'sage');
         }
         if (is_archive()) {
@@ -28,6 +41,7 @@ class App extends Controller
         if (is_404()) {
             return __('Not Found', 'sage');
         }
+
         return get_the_title();
     }
 }
