@@ -1,4 +1,4 @@
-@if(get_header_image() && !is_front_page())
+@if(is_front_page() && get_header_image())
   <figure class="header-image">
     <a href="{{ home_url( '/' ) }}" rel="home" class="border-none">
       <img src="@php(header_image())" class="block w-screen"
