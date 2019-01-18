@@ -111,6 +111,18 @@ add_action('after_setup_theme', static function (): void {
             ]
         )
     );
+
+    /**
+     * Add custom logo support.
+     */
+    add_theme_support(
+        'custom-logo',
+        [
+            'width'      => 180,
+            'height'     => 180,
+            'flex-width' => true,
+        ]
+    );
 }, 20);
 
 /**

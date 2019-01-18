@@ -44,7 +44,7 @@ p {
 }
 
 a {
-  @apply text-blue-dark no-underline border-b border-transparent font-sans;
+  @apply text-grey-darker no-underline border-b border-transparent font-sans;
 
   transition: 0.1s ease;
 }
@@ -58,7 +58,7 @@ h3 {
 }
 
 a:hover {
-  @apply border-blue-dark;
+  @apply border-grey-darker;
 }
 
 time {

@@ -1,33 +1,43 @@
 .header-image {
-  @apply overflow-hidden;
-
   max-height: 60vh;
 }
 
 .banner {
-  @apply border-b-8 border-blue-dark pt-3 pb-4 mb-3;
+  & .custom-logo-link {
+    @apply border-none;
 
-  & .brand {
-    @apply text-4xl border-none;
-  }
+    & img {
+      @apply block w-auto;
 
-  & .description {
-    @apply text-blue mb-0 font-sans;
+      max-height: 70px;
+    }
   }
 }
 
 .banner .nav {
-  @apply list-reset flex flex-wrap justify-between;
+  @apply list-reset flex justify-between;
+
+  .current-menu-item {
+    @apply border-grey-darkest;
+  }
+
+  li {
+    @apply border-b-4 border-grey-dark;
+
+    &:hover {
+      @apply border-grey-darkest;
+    }
+  }
 
   .sub-menu {
-    @apply hidden list-reset absolute bg-white z-10 border-b-8 border-blue-dark;
+    @apply hidden list-reset absolute bg-white z-10 border-b-8 border-grey-darker;
   }
 }
 
 .banner .nav a {
-  @apply inline-block px-2 mx-2 py-2 border-none border-transparent text-lg;
+  @apply inline-block px-3 py-2 border-none border-transparent text-lg;
 
   &:hover {
-    @apply text-blue;
+    @apply text-grey-darker;
   }
 }
