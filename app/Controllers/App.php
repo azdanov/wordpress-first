@@ -22,6 +22,11 @@ final class App extends Controller
         return get_bloginfo('name');
     }
 
+    public function siteDescription(): string
+    {
+        return get_bloginfo('description');
+    }
+
     public static function title(): string
     {
         if (is_home()) {

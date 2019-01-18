@@ -1,22 +1,66 @@
+html {
+  font-size: 18px;
+}
+
+body {
+  @apply text-black font-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply mb-2 leading-tight;
+  @apply mb-2 leading-tight font-sans;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
 }
 
 p {
-  @apply mb-3 leading-normal;
+  @apply mb-3 leading-normal text-base;
 }
 
 a {
-  @apply text-primary no-underline border-b border-transparent;
+  @apply text-blue-dark no-underline border-b border-transparent font-sans;
 
-  transition: 0.2s ease;
+  transition: 0.1s ease;
+}
 
-  &:hover {
-    @apply border-primary;
+h1,
+h2,
+h3 {
+  & > a {
+    @apply border-b-2;
   }
+}
+
+a:hover {
+  @apply border-blue-dark;
+}
+
+time {
+  @apply font-serif;
 }

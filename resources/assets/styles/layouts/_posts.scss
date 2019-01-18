@@ -1,0 +1,10 @@
+.post {
+  & ol,
+  & ul {
+    @apply leading-normal;
+
+    & li {
+      @apply mb-1;
+    }
+  }
+}
