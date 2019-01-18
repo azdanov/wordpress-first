@@ -1,4 +1,4 @@
-"use strict"; // eslint-disable-line
+// eslint-disable-line
 
 const webpack = require("webpack");
 const merge = require("webpack-merge");
@@ -196,12 +196,18 @@ let webpackConfig = {
   ]
 }; /** Let's only load dependencies as needed */
 
-/* eslint-disable global-require */ if (config.enabled.optimize) {
+/* eslint-disable global-require */
+if (config.enabled.optimize) {
   webpackConfig = merge(webpackConfig, require("./webpack.config.optimize"));
 }
 
 if (config.env.production) {
   webpackConfig.plugins.push(new webpack.NoEmitOnErrorsPlugin());
+  webpackConfig.plugins.push(
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
+    })
+  );
 }
 
 if (config.enabled.cacheBusting) {
