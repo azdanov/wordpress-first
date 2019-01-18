@@ -1,7 +1,8 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     /*
     |--------------------------------------------------------------------------
     | View Storage Paths
@@ -13,8 +14,8 @@ return [
     */
 
     'paths' => [
-        get_theme_file_path().'/resources/views',
-        get_parent_theme_file_path().'/resources/views',
+        get_theme_file_path() . '/resources/views',
+        get_parent_theme_file_path() . '/resources/views',
     ],
 
 
@@ -29,7 +30,7 @@ return [
     |
     */
 
-    'compiled' => wp_upload_dir()['basedir'].'/cache',
+    'compiled' => wp_upload_dir()['basedir'] . '/cache',
 
 
     /*

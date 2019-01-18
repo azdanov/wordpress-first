@@ -1,7 +1,8 @@
 <?php
 
-return [
+declare(strict_types=1);
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Assets Manifest
@@ -14,7 +15,7 @@ return [
     |
     */
 
-    'manifest' => get_theme_file_path().'/dist/assets.json',
+    'manifest' => get_theme_file_path() . '/dist/assets.json',
 
     /*
     |--------------------------------------------------------------------------
@@ -27,5 +28,5 @@ return [
     |
     */
 
-    'uri' => get_theme_file_uri().'/dist',
+    'uri' => get_theme_file_uri() . '/dist',
 ];
