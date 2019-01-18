@@ -18,7 +18,7 @@ use function strpos;
 /**
  * Get the sage container.
  *
- * @param array $parameters
+ * @param mixed[] $parameters
  *
  * @return Container|mixed
  */
@@ -122,7 +122,7 @@ function filter_templates($templates): array
  */
 function locate_template($templates): string
 {
-    return locate_template(filter_templates($templates));
+    return \locate_template(filter_templates($templates));
 }
 
 /**
