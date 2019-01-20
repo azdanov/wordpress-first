@@ -61,7 +61,11 @@ add_action('after_setup_theme', static function (): void {
      * @see https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'primary_navigation' => __('Header Navigation', 'first'),
+    ]);
+
+    register_nav_menus([
+        'social_links' => __('Social Links', 'first'),
     ]);
 
     /**
@@ -97,6 +101,8 @@ add_action('after_setup_theme', static function (): void {
 
     /**
      * Add custom header support.
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
      */
     add_theme_support(
         'custom-header',
@@ -114,6 +120,8 @@ add_action('after_setup_theme', static function (): void {
 
     /**
      * Add custom logo support.
+     *
+     * @see https://codex.wordpress.org/Theme_Logo
      */
     add_theme_support(
         'custom-logo',
@@ -136,11 +144,11 @@ add_action('widgets_init', static function (): void {
         'after_title' => '</h3>',
     ];
     register_sidebar([
-        'name' => __('Primary', 'sage'),
+        'name' => __('Primary', 'first'),
         'id' => 'sidebar-primary',
     ] + $config);
     register_sidebar([
-        'name' => __('Footer', 'sage'),
+        'name' => __('Footer', 'first'),
         'id' => 'sidebar-footer',
     ] + $config);
 });

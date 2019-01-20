@@ -1,0 +1,43 @@
+.footer {
+  .social {
+    @apply list-reset flex justify-around my-4;
+
+    @media screen and (min-width: 768px) {
+      @apply justify-center;
+    }
+
+    a {
+      @apply mx-2 flex items-center border-0;
+
+      &::before {
+        @apply inline-block bg-grey-dark mr-1 w-5 h-5;
+
+        content: "";
+        mask-size: cover;
+      }
+
+      &:hover {
+        @apply text-grey-darkest;
+
+        &::before {
+          @apply bg-grey-darker;
+        }
+      }
+
+      &[href*="twitter"]::before {
+        //noinspection CssUnknownTarget
+        mask: url("../images/twitter-box.svg") no-repeat 50% 50%;
+      }
+
+      &[href*="github"]::before {
+        //noinspection CssUnknownTarget
+        mask: url("../images/github-box.svg") no-repeat 50% 50%;
+      }
+
+      &[href*="facebook"]::before {
+        //noinspection CssUnknownTarget
+        mask: url("../images/facebook-box.svg") no-repeat 50% 50%;
+      }
+    }
+  }
+}

@@ -15,27 +15,53 @@
 }
 
 .banner .nav {
-  @apply list-reset flex justify-between;
+  @apply list-reset relative block w-full;
+
+  @media screen and (min-width: 768px) {
+    @apply flex justify-end;
+  }
 
   .current-menu-item {
     @apply border-grey-darkest;
   }
 
+  .menu-item-has-children {
+    @apply whitespace-no-wrap flex relative;
+  }
+
   li {
-    @apply border-b-4 border-grey-dark;
+    @apply border-b-4 border-grey;
 
     &:hover {
-      @apply border-grey-darkest;
+      @apply border-grey-darker;
     }
   }
 
   .sub-menu {
-    @apply hidden list-reset absolute bg-white z-10 border-b-8 border-grey-darker;
+    @apply list-reset absolute bg-white z-10 shadow;
+
+    & .sub-menu {
+      @apply ml-2;
+    }
+
+    top: 2.5rem;
+
+    & .current-menu-item {
+      @apply border-grey-darkest;
+    }
+
+    li {
+      @apply border-b-4 border-transparent;
+
+      &:hover {
+        @apply border-grey-darker;
+      }
+    }
   }
 }
 
 .banner .nav a {
-  @apply inline-block px-3 py-2 border-none border-transparent text-lg;
+  @apply w-full inline-block px-3 py-2 border-none border-transparent text-lg;
 
   &:hover {
     @apply text-grey-darker;

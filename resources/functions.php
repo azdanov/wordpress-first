@@ -19,7 +19,7 @@ use Roots\Sage\Container;
  * @param string $title
  */
 $sage_error = static function ($message, $subtitle = '', $title = ''): void {
-    $title = $title ?: __('Sage &rsaquo; Error', 'sage');
+    $title = $title ?: __('Sage &rsaquo; Error', 'first');
     $footer = '<a href="https://roots.io/sage/docs/">roots.io/sage/docs/</a>';
     $message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
     wp_die($message, $title);
@@ -29,14 +29,14 @@ $sage_error = static function ($message, $subtitle = '', $title = ''): void {
  * Ensure compatible version of PHP is used
  */
 if (version_compare('7.1', PHP_VERSION, '>=')) {
-    $sage_error(__('You must be using PHP 7.1 or greater.', 'sage'), __('Invalid PHP version', 'sage'));
+    $sage_error(__('You must be using PHP 7.1 or greater.', 'first'), __('Invalid PHP version', 'first'));
 }
 
 /**
  * Ensure compatible version of WordPress is used
  */
 if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
-    $sage_error(__('You must be using WordPress 4.7.0 or greater.', 'sage'), __('Invalid WordPress version', 'sage'));
+    $sage_error(__('You must be using WordPress 4.7.0 or greater.', 'first'), __('Invalid WordPress version', 'first'));
 }
 
 /**
@@ -46,8 +46,8 @@ if (!class_exists(Container::class)) {
     $composer = __DIR__ . '/../vendor/autoload.php';
     if (!file_exists($composer)) {
         $sage_error(
-            __('You must run <code>composer install</code> from the Sage directory.', 'sage'),
-            __('Autoloader not found.', 'sage')
+            __('You must run <code>composer install</code> from the Sage directory.', 'first'),
+            __('Autoloader not found.', 'first')
         );
     }
     require_once $composer;
@@ -65,7 +65,7 @@ array_map(static function ($file) use ($sage_error): void {
         return;
     }
 
-    $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
+    $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'first'), $file), 'File not found');
 }, ['helpers', 'setup', 'filters', 'admin']);
 
 /**

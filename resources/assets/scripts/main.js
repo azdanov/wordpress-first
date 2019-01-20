@@ -1,7 +1,5 @@
-// import external dependencies
-import "jquery";
+import $ from "jquery/dist/jquery.slim";
 
-// import local dependencies
 import Router from "./util/Router";
 import common from "./routes/common";
 import home from "./routes/home";
@@ -18,4 +16,4 @@ const routes = new Router({
 });
 
 // Load Events
-jQuery(document).ready(() => routes.loadEvents());
+$(routes.loadEvents());
