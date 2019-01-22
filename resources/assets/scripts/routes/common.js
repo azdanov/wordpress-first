@@ -1,16 +1,5 @@
 /* eslint-disable import/extensions */
 import $ from "jquery/dist/jquery.slim";
-import quicklink from "quicklink/dist/quicklink.mjs";
-
-function initQuicklink() {
-  quicklink({
-    ignores: [
-      /\/wp\/?/,
-      uri => uri.includes("#"),
-      (uri, element) => element.hasAttribute("noprefetch")
-    ]
-  });
-}
 
 function handleSubMenus() {
   const subMenus = $(".nav .sub-menu").addClass("hidden");
@@ -41,10 +30,6 @@ function handleMenuToggle() {
 
 export default {
   init() {
-    if (process.env.NODE_ENV === "production") {
-      initQuicklink();
-    }
-
     handleSubMenus();
 
     handleMenuToggle();

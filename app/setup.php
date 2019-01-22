@@ -15,16 +15,24 @@ use function file_exists;
 use function is_single;
 use function register_nav_menus;
 use function register_sidebar;
+use function wp_deregister_script;
 use function wp_enqueue_script;
 use function wp_enqueue_style;
 use function wp_mkdir_p;
+
+/**
+ * @see https://wordpress.stackexchange.com/questions/211701/what-does-wp-embed-min-js-do-in-wordpress-4-4
+ */
+add_action('init', static function (): void {
+    wp_deregister_script('wp-embed');
+});
 
 /**
  * Theme assets.
  */
 add_action('wp_enqueue_scripts', static function (): void {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), false, null, true);
 
     if (!is_single() || !comments_open() || !get_option('thread_comments')) {
         return;
@@ -126,8 +134,8 @@ add_action('after_setup_theme', static function (): void {
     add_theme_support(
         'custom-logo',
         [
-            'width'      => 180,
-            'height'     => 180,
+            'width' => 180,
+            'height' => 180,
             'flex-width' => true,
         ]
     );
