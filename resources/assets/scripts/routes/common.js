@@ -4,14 +4,10 @@ import quicklink from "quicklink/dist/quicklink.mjs";
 
 function initQuicklink() {
   quicklink({
-    // Ignore all requests to:
-    //  - all "/wp/*" pathnames
-    //  - all "#" fragments (e.g. index.html#top)
-    //  - all <a> tags with "noprefetch" attribute
     ignores: [
       /\/wp\/?/,
       uri => uri.includes("#"),
-      (uri, elem) => elem.hasAttribute("noprefetch")
+      (uri, element) => element.hasAttribute("noprefetch")
     ]
   });
 }
@@ -28,6 +24,7 @@ function handleSubMenus() {
     $(event.currentTarget)
       .next(".sub-menu")
       .toggleClass("hidden");
+    event.currentTarget.blur();
   });
 }
 

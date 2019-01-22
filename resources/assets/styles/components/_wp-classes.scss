@@ -14,6 +14,7 @@
 .aligncenter {
   @apply my-2 mx-auto;
 
+  clear: both;
   display: block;
   height: auto;
 }
@@ -41,7 +42,7 @@
 
 /** Captions */
 .wp-caption {
-  @apply inline-block mb-4;
+  @apply flex flex-col mb-4;
 }
 
 .wp-caption img {
@@ -49,8 +50,7 @@
 }
 
 .wp-caption-text {
-  font-size: 90%;
-  color: #6c757d;
+  @apply text-center text-base text-grey-dark;
 }
 
 /** Text meant only for screen readers */

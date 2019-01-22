@@ -1,0 +1,176 @@
+// stylelint-disable no-descending-specificity
+.post {
+  & ol,
+  & ul {
+    @apply leading-normal;
+
+    & li {
+      @apply mb-1;
+    }
+  }
+
+  & .post-categories {
+    @apply uppercase list-reset inline-flex flex-wrap;
+
+    & li {
+      @apply mr-2 text-grey-dark;
+
+      & > a {
+        @apply -ml-1 px-1 text-grey-darkest bg-grey-light;
+
+        &:hover {
+          @apply bg-grey-darker text-white border-transparent;
+        }
+      }
+    }
+  }
+
+  & .comment_meta {
+    @apply text-sm text-grey-dark;
+
+    &:hover {
+      @apply border-grey-dark;
+    }
+  }
+
+  & .post-tags {
+    @apply flex flex-wrap;
+
+    & > a {
+      @apply -ml-1 mr-1 px-1 text-grey-dark;
+
+      &:hover {
+        @apply border-grey-dark;
+      }
+    }
+  }
+
+  & .post-edit-link {
+    @apply text-sm text-grey-dark;
+
+    &:hover {
+      @apply border-grey-dark;
+    }
+  }
+
+  & .page-nav {
+    @apply font-sans text-center my-4;
+
+    word-spacing: 0.5rem;
+  }
+
+  .gallery {
+    @apply flex flex-wrap;
+
+    .gallery-item {
+      .gallery-icon {
+        @apply flex justify-center;
+      }
+
+      a {
+        @apply border p-1 inline-flex flex-col mb-2;
+      }
+
+      img {
+        @apply m-0;
+      }
+    }
+
+    &.gallery-columns-1 {
+      .gallery-item {
+        @apply w-full;
+      }
+    }
+
+    &.gallery-columns-2 {
+      .gallery-item {
+        @apply w-1/2;
+      }
+    }
+
+    &.gallery-columns-3 {
+      .gallery-item {
+        @apply w-1/3;
+      }
+    }
+
+    &.gallery-columns-4 {
+      .gallery-item {
+        @apply w-1/4;
+      }
+    }
+
+    &.gallery-columns-5 {
+      .gallery-item {
+        @apply w-1/5;
+      }
+    }
+
+    &.gallery-columns-6 {
+      .gallery-item {
+        @apply w-1/6;
+      }
+    }
+
+    &.gallery-columns-7 {
+      .gallery-item {
+        @apply w-1/7;
+      }
+    }
+
+    &.gallery-columns-8 {
+      .gallery-item {
+        @apply w-1/8;
+      }
+    }
+
+    &.gallery-columns-9 {
+      .gallery-item {
+        @apply w-1/9;
+      }
+    }
+
+    .gallery-caption {
+      @apply mb-3;
+    }
+  }
+
+  .nav-links {
+    @apply my-6 flex justify-between;
+
+    .nav-next,
+    .nav-previous {
+      @apply w-1/2 block border border-grey-lighter;
+
+      &:hover {
+        @apply border-grey-light;
+      }
+    }
+
+    .nav-meta,
+    .nav-title {
+      @apply block text-xl;
+    }
+
+    .nav-meta {
+      @apply text-grey-dark p-4 pb-0;
+    }
+
+    .nav-title {
+      @apply p-4 font-bold;
+    }
+
+    .nav-previous {
+      @apply mr-8;
+    }
+
+    .nav-next {
+      @apply ml-8;
+
+      .nav-meta,
+      .nav-title {
+        @apply block text-right;
+      }
+    }
+  }
+}

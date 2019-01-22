@@ -1,46 +1,15 @@
+@import "headers";
+
 html {
   font-size: 18px;
 }
 
 body {
-  @apply text-black font-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply mb-2 leading-tight font-sans;
-}
-
-h1 {
-  @apply text-4xl;
-}
-
-h2 {
-  @apply text-3xl;
-}
-
-h3 {
-  @apply text-2xl;
-}
-
-h4 {
-  @apply text-xl;
-}
-
-h5 {
-  @apply text-lg;
-}
-
-h6 {
-  @apply text-base;
+  @apply text-grey-darkest font-serif subpixel-antialiased;
 }
 
 p {
-  @apply mb-3 leading-normal text-base;
+  @apply mb-3 leading-normal text-lg;
 }
 
 a {
@@ -49,18 +18,55 @@ a {
   transition: 0.1s ease;
 }
 
-h1,
-h2,
-h3 {
-  & > a {
-    @apply border-b-2;
-  }
-}
-
 a:hover {
   @apply border-grey-darker;
 }
 
-time {
-  @apply font-serif;
+blockquote {
+  @apply bg-grey-lighter p-3 mb-3;
+
+  & > :last-of-type {
+    @apply mb-0 pb-0;
+  }
+}
+
+table {
+  @apply mb-2;
+
+  & th,
+  & td {
+    @apply p-2 mr-1 text-left;
+
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+dl {
+  @apply mb-2;
+
+  dt {
+    @apply font-bold mb-2;
+  }
+
+  dd {
+    @apply mb-3 ml-6;
+  }
+}
+
+pre {
+  @apply mb-3;
+
+  white-space: pre-line;
+}
+
+address {
+  @apply mb-2;
+}
+
+hr {
+  @apply border-b-2 border-grey-light;
+}
+
+img {
+  @apply my-2;
 }

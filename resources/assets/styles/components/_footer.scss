@@ -2,6 +2,8 @@
   .social {
     @apply list-reset flex justify-around my-4;
 
+    clear: both;
+
     @media screen and (min-width: 768px) {
       @apply justify-center;
     }

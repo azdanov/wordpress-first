@@ -40,12 +40,12 @@
 @import "components/comments";
 @import "components/forms";
 @import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
+@import "components/header";
+@import "components/sidebar";
+@import "components/footer";
+@import "components/pages";
+@import "components/posts";
+@import "components/tinymce";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
