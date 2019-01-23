@@ -1,0 +1,15 @@
+.page {
+  .page-footer {
+    .page-nav {
+      @apply font-sans my-5;
+
+      * {
+        @apply text-sm;
+      }
+
+      word-spacing: 0.5rem;
+    }
+
+    clear: both;
+  }
+}

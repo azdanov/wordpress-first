@@ -1,18 +1,20 @@
 // stylelint-disable no-descending-specificity
 .post {
-  & ol,
-  & ul {
+  @apply mb-6;
+
+  ol,
+  ul {
     @apply leading-normal;
 
-    & li {
+    li {
       @apply mb-1;
     }
   }
 
-  & .post-categories {
+  .post-categories {
     @apply uppercase list-reset inline-flex flex-wrap;
 
-    & li {
+    li {
       @apply mr-2 text-grey-dark;
 
       & > a {
@@ -25,19 +27,23 @@
     }
   }
 
-  & .comment_meta {
-    @apply text-sm text-grey-dark;
+  .entry-title {
+    @apply mb-1;
+  }
+
+  .comment_meta {
+    @apply text-grey-dark;
 
     &:hover {
       @apply border-grey-dark;
     }
   }
 
-  & .post-tags {
+  .post-tags {
     @apply flex flex-wrap;
 
     & > a {
-      @apply -ml-1 mr-1 px-1 text-grey-dark;
+      @apply -ml-1 mr-2 px-1 text-grey-dark;
 
       &:hover {
         @apply border-grey-dark;
@@ -45,16 +51,20 @@
     }
   }
 
-  & .post-edit-link {
-    @apply text-sm text-grey-dark;
+  .post-edit-link {
+    @apply text-xs text-grey-dark;
 
     &:hover {
       @apply border-grey-dark;
     }
   }
 
-  & .page-nav {
-    @apply font-sans text-center my-4;
+  .page-nav {
+    @apply font-sans my-5 text-sm;
+
+    a {
+      @apply text-sm;
+    }
 
     word-spacing: 0.5rem;
   }
@@ -140,10 +150,14 @@
 
     .nav-next,
     .nav-previous {
-      @apply w-1/2 block border border-grey-lighter;
+      @apply w-1/2;
 
-      &:hover {
-        @apply border-grey-light;
+      a {
+        @apply w-full h-full block border-2 border-transparent p-2;
+
+        &:hover {
+          @apply border-grey-light;
+        }
       }
     }
 
@@ -153,19 +167,27 @@
     }
 
     .nav-meta {
-      @apply text-grey-dark p-4 pb-0;
+      @apply text-grey-dark pb-0;
     }
 
     .nav-title {
-      @apply p-4 font-bold;
+      @apply pt-1 font-bold;
     }
 
     .nav-previous {
       @apply mr-8;
+
+      a {
+        @apply -ml-2;
+      }
     }
 
     .nav-next {
       @apply ml-8;
+
+      a {
+        @apply -mr-2;
+      }
 
       .nav-meta,
       .nav-title {

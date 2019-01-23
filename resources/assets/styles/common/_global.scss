@@ -1,7 +1,7 @@
-@import "headers";
+@import "headings";
 
 html {
-  font-size: 18px;
+  font-size: 21px;
 }
 
 body {
@@ -13,7 +13,7 @@ p {
 }
 
 a {
-  @apply text-grey-darker no-underline border-b border-transparent font-sans;
+  @apply text-grey-darker no-underline border-b border-transparent font-sans text-base;
 
   transition: 0.1s ease;
 }
@@ -23,7 +23,7 @@ a:hover {
 }
 
 blockquote {
-  @apply bg-grey-lighter p-3 mb-3;
+  @apply bg-grey-lighter p-3 mb-3 -ml-3 -mr-3;
 
   & > :last-of-type {
     @apply mb-0 pb-0;

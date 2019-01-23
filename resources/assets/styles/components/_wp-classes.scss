@@ -77,3 +77,8 @@
   clip: auto;
   white-space: normal;
 }
+
+/** Page Header */
+.page-header {
+  @apply mb-5;
+}

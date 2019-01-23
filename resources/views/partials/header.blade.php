@@ -18,7 +18,7 @@
       @endif
       <div>
         <a class="text-3xl text-grey-darkest border-none" href="{{ home_url('/') }}">{{ $site_name }}</a>
-        <p class="text-grey-darkest mb-0 font-sans">{{ $site_description }}</p>
+        <p class="text-grey-darkest mb-0 font-sans text-sm">{{ $site_description }}</p>
       </div>
     </div>
     <button

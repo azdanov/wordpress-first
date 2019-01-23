@@ -18,6 +18,11 @@ use function post_password_required;
 
 final class Single extends Controller
 {
+    public static function canEditPost(WP_Post $post): bool
+    {
+        return (bool) get_edit_post_link($post->ID);
+    }
+
     public function categoriesList(): string
     {
         return get_the_category_list();
@@ -36,11 +41,6 @@ final class Single extends Controller
     public function canDisplayCommentsMeta(): bool
     {
         return !post_password_required() && (comments_open() || get_comments_number());
-    }
-
-    public static function canEditPost(WP_Post $post): bool
-    {
-        return (bool) get_edit_post_link($post->ID);
     }
 
     public function postNavigation(): string

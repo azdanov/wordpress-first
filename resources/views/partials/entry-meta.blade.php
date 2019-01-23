@@ -1,4 +1,4 @@
-<section class="font-sans">
+<section class="font-sans uppercase text-xs text-grey-dark">
   <time datetime="{{ get_post_time('c', true) }}">
     {{ get_the_date() }}
   </time>
@@ -19,9 +19,10 @@
     @php(edit_post_link(__('Edit Post', 'first')))
   @endif
 
-  <p class="text-base">
+  <p class="text-xs">
     {{ __('By', 'first') }}
-    <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
+    <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author"
+       class="text-xs text-grey-darker hover:border-grey-darker">
       {{ get_the_author() }}
     </a>
   </p>
