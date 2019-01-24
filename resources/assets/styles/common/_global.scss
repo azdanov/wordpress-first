@@ -41,6 +41,14 @@ table {
   }
 }
 
+li {
+  @apply mb-1;
+
+  &:last-of-type {
+    @apply mb-0;
+  }
+}
+
 dl {
   @apply mb-2;
 

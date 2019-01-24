@@ -10,11 +10,10 @@ use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 use function add_editor_style;
 use function add_theme_support;
-use function comments_open;
 use function file_exists;
-use function is_single;
 use function register_nav_menus;
 use function register_sidebar;
+use function time;
 use function wp_deregister_script;
 use function wp_enqueue_script;
 use function wp_enqueue_style;
@@ -31,14 +30,8 @@ add_action('init', static function (): void {
  * Theme assets.
  */
 add_action('wp_enqueue_scripts', static function (): void {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), false, null, true);
-
-    if (!is_single() || !comments_open() || !get_option('thread_comments')) {
-        return;
-    }
-
-    wp_enqueue_script('comment-reply');
+    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, time());
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], time(), true);
 }, 100);
 
 /**
@@ -152,8 +145,8 @@ add_action('widgets_init', static function (): void {
         'after_title' => '</h3>',
     ];
     register_sidebar([
-        'name' => __('Primary', 'first'),
-        'id' => 'sidebar-primary',
+        'name' => __('Blog', 'first'),
+        'id' => 'sidebar-blog',
     ] + $config);
     register_sidebar([
         'name' => __('Footer', 'first'),

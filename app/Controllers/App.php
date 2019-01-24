@@ -27,6 +27,15 @@ final class App extends Controller
         return get_bloginfo('description');
     }
 
+    public function showBlogSidebar(): bool
+    {
+        if (is_front_page() || is_page()) {
+            return false;
+        }
+
+        return is_active_sidebar('sidebar-blog');
+    }
+
     public static function title(): string
     {
         if (is_home()) {

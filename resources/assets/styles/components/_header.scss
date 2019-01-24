@@ -34,7 +34,7 @@
   }
 
   li {
-    @apply border-b-4 border-grey;
+    @apply border-b-4 border-grey mb-0;
 
     &:hover {
       @apply border-grey-darker;
@@ -55,7 +55,7 @@
     }
 
     li {
-      @apply border-b-4 border-transparent;
+      @apply border-b-4 border-transparent mb-0;
 
       &:hover {
         @apply border-grey-darker;

@@ -3,16 +3,16 @@
     {{ get_the_date() }}
   </time>
 
-  @isset ($is_post_modified)
+  @if (isset($is_post_modified) && $is_post_modified)
     <time class="hidden" datetime="{{ get_the_modified_date('c', true) }}">
       {{ get_the_modified_date() }}
     </time>
-  @endisset
+  @endif
 
-  @isset ($can_display_comments_meta)
+  @if (isset($can_display_comments_meta) && $can_display_comments_meta)
     <span class="mx-1 select-none text-grey">&middot;</span>
     @php(comments_popup_link(false, false, false, 'comment_meta'))
-  @endisset
+  @endif
 
   @if (App\Controllers\Single::canEditPost($post))
     <span class="mx-1 select-none text-grey">&middot;</span>

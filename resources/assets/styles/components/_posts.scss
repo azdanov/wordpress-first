@@ -18,10 +18,10 @@
       @apply mr-2 text-grey-dark;
 
       & > a {
-        @apply -ml-1 px-1 text-grey-darkest bg-grey-light;
+        @apply -ml-1 px-1 text-grey-darker bg-grey-lighter text-sm;
 
         &:hover {
-          @apply bg-grey-darker text-white border-transparent;
+          @apply bg-grey-dark text-white border-transparent;
         }
       }
     }
@@ -32,7 +32,7 @@
   }
 
   .comment_meta {
-    @apply text-grey-dark;
+    @apply text-grey-dark text-xs;
 
     &:hover {
       @apply border-grey-dark;

@@ -40,7 +40,7 @@ final class Single extends Controller
 
     public function canDisplayCommentsMeta(): bool
     {
-        return !post_password_required() && (comments_open() || get_comments_number());
+        return (!post_password_required() && comments_open()) || get_comments_number();
     }
 
     public function postNavigation(): string
