@@ -39,7 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
-    "autoprefixer": "~8.2.0",
+    "autoprefixer": "~9.4.6",
     "babel-loader": "^8.0.5",
     "browser-sync": "~2.26.3",
     "browsersync-webpack-plugin": "^0.6.0",
@@ -83,9 +83,9 @@
     "webpack": "~3.10.0",
     "webpack-assets-manifest": "^1.0.0",
     "webpack-dev-middleware": "~2.0.4",
-    "webpack-hot-middleware": "~2.22.3",
-    "webpack-merge": "~4.1.4",
-    "yargs": "~11.0.0"
+    "webpack-hot-middleware": "~2.24.3",
+    "webpack-merge": "~4.2.1",
+    "yargs": "~12.0.5"
   },
   "dependencies": {
     "jquery": "^3.3.1"
