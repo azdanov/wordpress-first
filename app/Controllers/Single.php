@@ -30,7 +30,7 @@ final class Single extends Controller
 
     public function tagsList(): string
     {
-        return get_the_tag_list();
+        return get_the_tag_list() ?: '';
     }
 
     public function isPostModified(): bool

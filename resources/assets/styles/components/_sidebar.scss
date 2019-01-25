@@ -16,12 +16,12 @@
     }
 
     .search-submit {
-      @apply text-xs px-2 text-grey-dark border border-grey-light bg-transparent h-8 rounded-l-none rounded-r-sm;
+      @apply py-2 px-2 bg-transparent rounded-none text-sm cursor-pointer text-grey-dark leading-none border border-grey;
 
       transition: all 0.15s;
 
       &:hover {
-        @apply bg-grey-dark border-grey-dark text-white cursor-pointer;
+        @apply border-grey-dark text-grey-darker;
       }
     }
   }

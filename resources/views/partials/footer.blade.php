@@ -1,4 +1,4 @@
-<footer class="footer content-info my-8">
+<footer class="footer content-info my-6">
   <div class="container">
     <div>
       @php(dynamic_sidebar('sidebar-footer'))
@@ -8,6 +8,6 @@
         {!! wp_nav_menu(['theme_location' => 'social_links', 'menu_class' => 'social', 'container' => '']) !!}
       @endif
     </div>
-    <p class="mt-6 text-center font-sans text-grey-darker text-base">© {{ date('Y') }}</p>
+    <p class="mt-4 text-center font-sans text-grey-darker text-sm">© {{ date('Y') }}</p>
   </div>
 </footer>

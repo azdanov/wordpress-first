@@ -32,6 +32,11 @@ add_action('init', static function (): void {
 add_action('wp_enqueue_scripts', static function (): void {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, time());
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], time(), true);
+
+    // phpcs:ignore
+    if (is_single() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }, 100);
 
 /**

@@ -1,30 +1,149 @@
+$margin-left: 70px;
+
+.comments {
+  @apply font-sans;
+
+  > h2 {
+    @apply text-2xl text-grey-darker;
+  }
+
+  nav {
+    @apply my-6;
+
+    .pager {
+      @apply list-reset flex justify-between;
+    }
+  }
+}
+
 .comment-list {
-  @apply list-reset;
+  @apply list-reset mt-8;
 }
 
 .comment-list ol {
   list-style: none;
 }
 
-.comment-form p {
-  @apply mb-4;
+.comment-body {
+  @apply mb-8;
 }
 
-.comment-form input[type="text"],
-.comment-form input[type="email"],
-.comment-form input[type="url"],
-.comment-form textarea {
-  @apply block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-grey-darker border border-grey rounded;
-
-  &:focus {
-    @apply shadow-outline;
+.bypostauthor {
+  .avatar {
+    @apply border-2 border-grey-dark;
   }
 }
 
-.comment-form input[type="submit"] {
-  @apply btn bg-grey-dark;
+.comment-meta {
+  @apply relative leading-none;
+
+  margin-left: $margin-left;
+
+  .says {
+    @apply text-sm text-grey-dark;
+  }
+
+  .avatar {
+    @apply h-10 w-10 absolute pin-t -mt-1 rounded-full shadow;
+
+    left: -$margin-left;
+  }
+
+  .comment-metadata {
+    * {
+      @apply text-xs;
+    }
+
+    .edit-link::before {
+      @apply mr-1 text-grey;
+
+      content: "·";
+    }
+  }
+
+  .comment-awaiting-moderation {
+    @apply text-xs text-grey-darkest;
+  }
+}
+
+.comment-content {
+  @apply mt-3;
+
+  margin-left: $margin-left;
+
+  p {
+    @apply text-base my-2 leading-normal font-serif;
+
+    a {
+      @apply text-sm;
+    }
+  }
+}
+
+.reply {
+  @apply mt-4;
+
+  margin-left: $margin-left;
+}
+
+.comment-respond {
+  @apply mt-6;
+}
+
+.comment-reply-link {
+  @apply py-1 px-3 text-sm cursor-pointer text-grey-dark leading-none border border-grey;
 
   &:hover {
-    @apply bg-grey-darker;
+    @apply border-grey-dark text-grey-darker;
+  }
+}
+
+.comment-reply-title {
+  @apply mb-0 text-grey-darker;
+}
+
+.comment-form {
+  .comment-notes,
+  .logged-in-as {
+    @apply text-base mb-3 text-grey-darker;
+  }
+
+  .required {
+    @apply text-grey-darkest;
+  }
+
+  .comment-form-cookies-consent {
+    @apply flex items-baseline;
+
+    input {
+      @apply mr-2;
+    }
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  label {
+    @apply text-base italic;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    @apply block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-grey-darkest border border-grey;
+
+    &:focus {
+      @apply shadow-outline;
+    }
+  }
+
+  input[type="submit"] {
+    @apply py-2 px-3 text-sm cursor-pointer text-grey-darker leading-none border border-grey-dark;
+
+    &:hover {
+      @apply border-grey-darker text-grey-darkest;
+    }
   }
 }
