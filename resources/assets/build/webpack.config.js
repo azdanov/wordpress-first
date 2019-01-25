@@ -6,6 +6,7 @@ const CleanPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const CopyGlobsPlugin = require("copy-globs-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 
 const desire = require("./util/desire");
@@ -152,16 +153,13 @@ let webpackConfig = {
       root: config.paths.root,
       verbose: false
     }),
-    /**
-     * It would be nice to switch to copy-webpack-plugin, but
-     * unfortunately it doesn't provide a reliable way of
-     * tracking the before/after file names
-     */
-    new CopyGlobsPlugin({
-      pattern: config.copy,
-      output: `[path]${assetsFilenames}.[ext]`,
-      manifest: config.manifest
-    }),
+    new CopyWebpackPlugin([
+      {
+        from: config.copy,
+        to: `[path]${assetsFilenames}.[ext]`,
+        cache: true
+      }
+    ]),
     new ExtractTextPlugin({
       filename: `styles/${assetsFilenames}.css`,
       allChunks: true,
