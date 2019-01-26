@@ -7,12 +7,12 @@
 @include('partials.header')
 
 <div class="wrap container" role="document">
-  <div class="content {{$show_blog_sidebar ? 'flex' : ''}}">
-    <main class="main md:w-3/4 {{$show_blog_sidebar ? 'pr-10' : ''}}">
+  <div class="content {{$show_blog_sidebar ? 'flex flex-wrap' : ''}}">
+    <main class="main md:w-3/4 mx-auto">
       @yield('content')
     </main>
     @if ($show_blog_sidebar)
-      <aside class="sidebar md:w-1/4 mt-6 md:mt-0">
+      <aside class="sidebar md:w-1/4 mt-6 md:mt-0 pl-10">
         @include('partials.sidebar')
       </aside>
     @endif

@@ -8,6 +8,6 @@
         {!! wp_nav_menu(['theme_location' => 'social_links', 'menu_class' => 'social', 'container' => '']) !!}
       @endif
     </div>
-    <p class="mt-4 text-center font-sans text-grey-darker text-sm">© {{ date('Y') }}</p>
+    <p class="mt-4 text-center text-grey-darker text-sm">© {{ date('Y') }}</p>
   </div>
 </footer>

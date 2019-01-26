@@ -1,15 +1,49 @@
+.toggle-sidebar {
+  @apply mt-0 h-8 text-grey-dark text-3xl;
+
+  &.right {
+    @screen md {
+      transform: rotate(0.75turn);
+    }
+
+    transform: rotate(-0.75turn);
+  }
+
+  &.left {
+    @screen md {
+      transform: rotate(-0.75turn);
+    }
+
+    transform: rotate(0.75turn);
+  }
+
+  &.sidebar-visible {
+    @apply -mr-6 mt-0;
+  }
+
+  @screen md {
+    @apply w-5;
+  }
+
+  &:hover {
+    @apply text-grey-darker;
+  }
+}
+
 .sidebar {
   @apply font-sans;
 
-  & ul,
-  & ol {
+  ul,
+  ol {
     @apply list-reset;
   }
 
-  & .search-form {
+  .search-form {
     @apply flex items-baseline;
 
     label {
+      @apply mb-3;
+
       input {
         @apply mb-0 rounded-none border-t-0 border-l-2 border-r-0 border-b-0;
       }

@@ -5,15 +5,15 @@ html {
 }
 
 body {
-  @apply text-grey-darkest font-serif subpixel-antialiased;
+  @apply text-grey-darkest subpixel-antialiased font-sans;
 }
 
 p {
-  @apply mb-3 leading-normal text-lg;
+  @apply mb-3 leading-tight text-lg;
 }
 
 a {
-  @apply text-grey-darker no-underline border-b border-transparent font-sans text-base;
+  @apply text-grey-darker no-underline border-b border-transparent text-lg;
 
   transition: 0.1s ease;
 }

@@ -1,4 +1,4 @@
-import $ from "jquery/dist/jquery.slim";
+import $ from "jquery";
 
 import Router from "./util/Router";
 import common from "./routes/common";

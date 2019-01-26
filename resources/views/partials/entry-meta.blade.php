@@ -1,4 +1,4 @@
-<section class="font-sans uppercase text-xs text-grey-dark">
+<section class="uppercase text-xs text-grey-dark pl-1">
   <time datetime="{{ get_post_time('c', true) }}">
     {{ get_the_date() }}
   </time>

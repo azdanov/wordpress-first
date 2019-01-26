@@ -82,3 +82,18 @@
 .page-header {
   @apply mb-5;
 }
+
+/** Images */
+.featured-image {
+  &.full-bleed {
+    @apply my-4 overflow-hidden;
+
+    max-height: 1200px;
+    margin-left: -33.33%;
+    margin-right: -33.33%;
+  }
+
+  img {
+    @apply block m-0 mx-auto;
+  }
+}

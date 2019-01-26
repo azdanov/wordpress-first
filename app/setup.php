@@ -33,6 +33,11 @@ add_action('wp_enqueue_scripts', static function (): void {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, time());
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], time(), true);
 
+    wp_enqueue_style(
+        'first-google-fonts',
+        'https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext'
+    );
+
     // phpcs:ignore
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -80,6 +85,13 @@ add_action('after_setup_theme', static function (): void {
      * @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
+
+    /**
+     * Add image sizes.
+     *
+     * @see https://developer.wordpress.org/reference/functions/add_image_size/
+     */
+    add_image_size('first-full-bleed', 2000, 1200, true);
 
     /**
      * Enable HTML5 markup support.

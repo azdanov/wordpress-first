@@ -4,12 +4,12 @@
 
     clear: both;
 
-    @media screen and (min-width: 768px) {
+    @screen md {
       @apply justify-center;
     }
 
     a {
-      @apply mx-2 flex items-center border-0;
+      @apply mx-2 flex items-center border-0 text-base;
 
       &::before {
         @apply inline-block bg-grey-dark mr-1 w-5 h-5;

@@ -11,8 +11,19 @@
     }
   }
 
+  .entry-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply mt-6 mb-2;
+    }
+  }
+
   .post-categories {
-    @apply uppercase list-reset inline-flex flex-wrap;
+    @apply uppercase list-reset inline-flex flex-wrap ml-1;
 
     li {
       @apply mr-2 text-grey-dark;
@@ -60,7 +71,7 @@
   }
 
   .page-nav {
-    @apply font-sans my-5 text-sm;
+    @apply my-5 text-sm;
 
     a {
       @apply text-sm;
