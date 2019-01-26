@@ -52,7 +52,7 @@ add_filter('body_class', static function (array $classes) {
  * Add "… Continued" to the excerpt.
  */
 add_filter('excerpt_more', static function () {
-    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'first') . '</a>';
+    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continue', 'first') . '</a>';
 });
 
 /**
@@ -94,10 +94,12 @@ add_filter('template_include', static function ($template) {
             echo $output;
         });
     });
+
     $data = collect(get_body_class())->reduce(static function ($data, $class) use ($template) {
         // phpcs:ignore Squiz.Strings.DoubleQuoteUsage.ContainsVar
         return apply_filters("sage/template/{$class}/data", $data, $template);
     }, []);
+
     if ($template) {
         echo template($template, $data);
 
