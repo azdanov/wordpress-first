@@ -191,8 +191,9 @@ module.exports = {
   */
 
   fonts: {
+    "pt-sans": ["PT Sans", "sans-serif"],
+    cabin: ["Cabin", "sans-serif"],
     sans: [
-      "PT Sans",
       "system-ui",
       "BlinkMacSystemFont",
       "-apple-system",

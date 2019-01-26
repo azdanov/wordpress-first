@@ -29,127 +29,138 @@ add_action('init', static function (): void {
 /**
  * Theme assets.
  */
-add_action('wp_enqueue_scripts', static function (): void {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, time());
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], time(), true);
+add_action(
+    'wp_enqueue_scripts',
+    static function (): void {
+        wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, time());
+        wp_enqueue_script(
+            'sage/main.js',
+            asset_path('scripts/main.js'),
+            ['jquery'],
+            time(),
+            true
+        );
 
-    wp_enqueue_style(
-        'first-google-fonts',
-        'https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext'
-    );
+        wp_enqueue_style(
+            'first-google-fonts',
+            'https://fonts.googleapis.com/css?family=Cabin:400,400i,700,700i|PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext'
+        );
 
-    // phpcs:ignore
-    if (is_single() && comments_open() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
-}, 100);
+        // phpcs:ignore
+        if (is_single() && comments_open() && get_option('thread_comments')) {
+            wp_enqueue_script('comment-reply');
+        }
+    },
+    100
+);
 
 /**
  * Theme setup.
  */
-add_action('after_setup_theme', static function (): void {
-    /**
-     * Enable features from Soil when plugin is activated.
-     *
-     * @see https://roots.io/plugins/soil/
-     */
-    add_theme_support('soil-clean-up');
-    add_theme_support('soil-jquery-cdn');
-    add_theme_support('soil-nav-walker');
-    add_theme_support('soil-nice-search');
-    add_theme_support('soil-relative-urls');
+add_action(
+    'after_setup_theme',
+    static function (): void {
+        /**
+         * Enable features from Soil when plugin is activated.
+         *
+         * @see https://roots.io/plugins/soil/
+         */
+        add_theme_support('soil-clean-up');
+        add_theme_support('soil-jquery-cdn');
+        add_theme_support('soil-nav-walker');
+        add_theme_support('soil-nice-search');
+        add_theme_support('soil-relative-urls');
 
-    /**
-     * Enable plugins to manage the document title.
-     *
-     * @see https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
-     */
-    add_theme_support('title-tag');
+        /**
+         * Enable plugins to manage the document title.
+         *
+         * @see https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
+         */
+        add_theme_support('title-tag');
 
-    /**
-     * Register navigation menus.
-     *
-     * @see https://developer.wordpress.org/reference/functions/register_nav_menus/
-     */
-    register_nav_menus([
-        'primary_navigation' => __('Header Navigation', 'first'),
-    ]);
+        /**
+         * Register navigation menus.
+         *
+         * @see https://developer.wordpress.org/reference/functions/register_nav_menus/
+         */
+        register_nav_menus([
+            'primary_navigation' => __('Header Navigation', 'first'),
+        ]);
 
-    register_nav_menus([
-        'social_links' => __('Social Links', 'first'),
-    ]);
+        register_nav_menus([
+            'social_links' => __('Social Links', 'first'),
+        ]);
 
-    /**
-     * Enable post thumbnails.
-     *
-     * @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-     */
-    add_theme_support('post-thumbnails');
+        /**
+         * Enable post thumbnails.
+         *
+         * @see https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+        add_theme_support('post-thumbnails');
 
-    /**
-     * Add image sizes.
-     *
-     * @see https://developer.wordpress.org/reference/functions/add_image_size/
-     */
-    add_image_size('first-full-bleed', 2000, 1200, true);
+        /**
+         * Add image sizes.
+         *
+         * @see https://developer.wordpress.org/reference/functions/add_image_size/
+         */
+        add_image_size('first-full-bleed', 2000, 1200, true);
 
-    /**
-     * Enable HTML5 markup support.
-     *
-     * @see https://developer.wordpress.org/reference/functions/add_theme_support/#html5
-     */
-    add_theme_support(
-        'html5',
-        ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']
-    );
+        /**
+         * Enable HTML5 markup support.
+         *
+         * @see https://developer.wordpress.org/reference/functions/add_theme_support/#html5
+         */
+        add_theme_support('html5', [
+            'caption',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'search-form',
+        ]);
 
-    /**
-     * Enable selective refresh for widgets in customizer.
-     *
-     * @see https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
-     */
-    add_theme_support('customize-selective-refresh-widgets');
+        /**
+         * Enable selective refresh for widgets in customizer.
+         *
+         * @see https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
+         */
+        add_theme_support('customize-selective-refresh-widgets');
 
-    /**
-     * Use main stylesheet for visual editor.
-     *
-     * @see resources/assets/styles/layouts/_tinymce.scss
-     */
-    add_editor_style(asset_path('styles/main.css'));
+        /**
+         * Use main stylesheet for visual editor.
+         *
+         * @see resources/assets/styles/layouts/_tinymce.scss
+         */
+        add_editor_style(asset_path('styles/main.css'));
 
-    /**
-     * Add custom header support.
-     *
-     * @see https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
-     */
-    add_theme_support(
-        'custom-header',
-        apply_filters(
-            'sage/display_custom_header',
-            [
+        /**
+         * Add custom header support.
+         *
+         * @see https://developer.wordpress.org/reference/functions/add_theme_support/#custom-header
+         */
+        add_theme_support(
+            'custom-header',
+            apply_filters('sage/display_custom_header', [
                 'default-image' => '',
                 'default-text-color' => 'ffffff',
                 'width' => 2000,
                 'height' => 850,
                 'flex-height' => true,
-            ]
-        )
-    );
+            ])
+        );
 
-    /**
-     * Add custom logo support.
-     *
-     * @see https://codex.wordpress.org/Theme_Logo
-     */
-    add_theme_support(
-        'custom-logo',
-        [
+        /**
+         * Add custom logo support.
+         *
+         * @see https://codex.wordpress.org/Theme_Logo
+         */
+        add_theme_support('custom-logo', [
             'width' => 180,
             'height' => 180,
             'flex-width' => true,
-        ]
-    );
-}, 20);
+        ]);
+    },
+    20
+);
 
 /**
  * Register sidebars.
@@ -206,8 +217,10 @@ add_action('after_setup_theme', static function (): void {
     /**
      * Create @asset() Blade directive.
      */
-    sage('blade')->compiler()->directive('asset', static function ($asset) {
-        // phpcs:ignore Squiz.Strings.DoubleQuoteUsage.ContainsVar
-        return '<?= ' . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
-    });
+    sage('blade')
+        ->compiler()
+        ->directive('asset', static function ($asset) {
+            // phpcs:ignore Squiz.Strings.DoubleQuoteUsage.ContainsVar
+            return '<?= ' . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
+        });
 });

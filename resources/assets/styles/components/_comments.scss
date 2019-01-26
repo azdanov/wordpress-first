@@ -1,7 +1,7 @@
 $margin-left: 70px;
 
 .comments {
-  @apply font-sans;
+  @apply font-pt-sans;
 
   > h2 {
     @apply text-2xl text-grey-darker;
@@ -72,10 +72,10 @@ $margin-left: 70px;
   margin-left: $margin-left;
 
   p {
-    @apply text-base my-2 leading-normal font-serif;
+    @apply text-base font-cabin;
 
     a {
-      @apply text-sm;
+      @apply text-base;
     }
   }
 }

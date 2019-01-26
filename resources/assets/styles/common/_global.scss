@@ -5,11 +5,11 @@ html {
 }
 
 body {
-  @apply text-grey-darkest subpixel-antialiased font-sans;
+  @apply text-grey-darkest subpixel-antialiased font-pt-sans;
 }
 
 p {
-  @apply mb-4 leading-tight text-lg;
+  @apply mb-3 font-cabin text-lg leading-normal;
 }
 
 a {

@@ -207,3 +207,18 @@
     }
   }
 }
+
+.posts-navigation {
+  .nav-links {
+    @apply my-4 flex justify-between;
+  }
+
+  .nav-previous,
+  .nav-next {
+    @apply w-1/2;
+  }
+
+  .nav-next {
+    @apply text-right;
+  }
+}
