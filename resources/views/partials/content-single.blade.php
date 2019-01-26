@@ -5,7 +5,7 @@
 <article @php(post_class())>
   <section>
     <header class="mb-1">
-      <h1 class="entry-title mt-1 mb-2">{{ get_the_title() }}</h1>
+      <h1 class="entry-title mt-1 mb-2">{!! get_the_title() !!}</h1>
       @include('partials/entry-meta')
       @if(has_post_thumbnail())
         <figure class="featured-image">

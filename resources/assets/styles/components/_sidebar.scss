@@ -31,11 +31,17 @@
 }
 
 .sidebar {
-  @apply font-sans;
-
   ul,
   ol {
     @apply list-reset;
+  }
+
+  h3 {
+    @apply text-lg mb-1;
+  }
+
+  select {
+    @apply text-sm;
   }
 
   .search-form {
@@ -60,19 +66,19 @@
     }
   }
 
+  .widget_categories,
+  .widget_meta,
+  .widget_nav_menu,
+  .widget_text,
+  .widget_rss,
+  .widget_pages,
   .widget_meta,
   .widget_categories,
   .widget_archive,
   .widget_recent_comments,
   .widget_recent_entries {
-    @apply mb-3;
-
-    h3 {
-      @apply text-lg mb-1;
-    }
-
     ul li {
-      @apply mb-1;
+      @apply mb-1 text-xs text-grey-dark;
 
       a {
         @apply text-sm leading-tight border-none inline-block;
@@ -82,5 +88,50 @@
         }
       }
     }
+
+    .current_page_item {
+      // stylelint-disable no-descending-specificity
+      a {
+        @apply underline;
+      }
+    }
+
+    .children {
+      @apply mb-1 ml-4;
+    }
+  }
+}
+
+.widget {
+  @apply mb-3;
+}
+
+.widget_calendar {
+  #wp-calendar {
+    caption {
+      @apply mt-1;
+    }
+
+    * {
+      @apply text-xs;
+    }
+  }
+}
+
+.textwidget {
+  form {
+    * {
+      @apply w-full;
+    }
+  }
+
+  p {
+    @apply text-xs;
+  }
+}
+
+.menu-testing-menu-container {
+  .sub-menu {
+    @apply mt-1 ml-4;
   }
 }
