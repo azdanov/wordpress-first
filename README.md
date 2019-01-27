@@ -1,6 +1,6 @@
 # First
 
-A WordPress theme made with Sage. [Live version](https://wordpress-first.netlify.com/).
+My first WordPress theme made with Sage. [Live version](https://wordpress-first.netlify.com/).
 
 <img width="1392" alt="screenshot 2019-01-27 at 21 03 38" src="https://user-images.githubusercontent.com/6123841/51805525-0c0ad580-2277-11e9-8c99-7b707af7f0ef.png">
 
