@@ -1,6 +1,6 @@
 // stylelint-disable no-descending-specificity
 .post {
-  @apply mb-6;
+  @apply mb-12;
 
   ol,
   ul {
@@ -50,6 +50,10 @@
 
   .entry-title {
     @apply mb-1;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 
   .comment_meta {
