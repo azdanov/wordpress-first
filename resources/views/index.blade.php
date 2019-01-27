@@ -15,5 +15,5 @@
     @include('partials.content-'.get_post_type())
   @endwhile
 
-  {!! get_the_posts_navigation() !!}
+  {!! $get_pagination !!}
 @endsection

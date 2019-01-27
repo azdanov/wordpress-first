@@ -17,25 +17,6 @@ use function sprintf;
 
 final class App extends Controller
 {
-    public function siteName(): string
-    {
-        return get_bloginfo('name');
-    }
-
-    public function siteDescription(): string
-    {
-        return get_bloginfo('description');
-    }
-
-    public function showBlogSidebar(): bool
-    {
-        if (is_front_page() || is_page()) {
-            return false;
-        }
-
-        return is_active_sidebar('sidebar-blog');
-    }
-
     public static function title(): string
     {
         if (is_home()) {
@@ -57,5 +38,34 @@ final class App extends Controller
         }
 
         return get_the_title();
+    }
+
+    public function siteName(): string
+    {
+        return get_bloginfo('name');
+    }
+
+    public function siteDescription(): string
+    {
+        return get_bloginfo('description');
+    }
+
+    public function showBlogSidebar(): bool
+    {
+        if (is_front_page() || is_page()) {
+            return false;
+        }
+
+        return is_active_sidebar('sidebar-blog');
+    }
+
+    public function getPagination(): string
+    {
+        // alternative: get_the_posts_navigation()
+        return get_the_posts_pagination([
+            'mid_size' => 2,
+            'prev_text' => __('Newer', 'first'),
+            'next_text' => __('Older', 'first'),
+        ]);
     }
 }

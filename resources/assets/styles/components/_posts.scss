@@ -11,6 +11,16 @@
     }
   }
 
+  &.sticky {
+    & .entry-title::before {
+      @apply inline-block bg-grey-darkest mr-1 w-5 h-5;
+
+      content: "";
+      //noinspection CssUnknownTarget
+      mask: url("../images/pin.svg") no-repeat 50% 50%;
+    }
+  }
+
   .entry-content {
     h1,
     h2,
@@ -211,6 +221,38 @@
 }
 
 .posts-navigation {
+  .nav-links {
+    @apply my-4 flex justify-between;
+  }
+
+  .nav-previous {
+    @apply w-1/2;
+  }
+
+  .nav-previous + .nav-next {
+    @apply w-1/2;
+  }
+
+  .nav-next {
+    @apply text-right w-full;
+  }
+}
+
+.pagination {
+  @apply mt-10 mx-auto;
+
+  @screen md {
+    @apply w-1/2;
+  }
+
+  * {
+    @apply text-base;
+  }
+
+  .current {
+    @apply underline;
+  }
+
   .nav-links {
     @apply my-4 flex justify-between;
   }

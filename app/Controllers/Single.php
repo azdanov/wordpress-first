@@ -20,7 +20,7 @@ final class Single extends Controller
 {
     public static function canEditPost(WP_Post $post): bool
     {
-        return (bool) get_edit_post_link($post->ID);
+        return (bool)get_edit_post_link($post->ID);
     }
 
     public function categoriesList(): string
