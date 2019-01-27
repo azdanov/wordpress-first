@@ -8,7 +8,7 @@
       <h1 class="entry-title mt-1 mb-2">{!! get_the_title() !!}</h1>
       @include('partials/entry-meta')
       @if(has_post_thumbnail())
-        <figure class="featured-image">
+        <figure class="featured-image full-bleed">
           @php(the_post_thumbnail('first-full-bleed'))
         </figure>
       @endif

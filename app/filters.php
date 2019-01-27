@@ -49,7 +49,7 @@ add_filter('body_class', static function (array $classes) {
 });
 
 /**
- * Add "… Continued" to the excerpt.
+ * Add "… Continue" to the excerpt.
  */
 add_filter('excerpt_more', static function () {
     return ' &hellip; <a href="' . get_permalink() . '">' . __('Continue', 'first') . '</a>';

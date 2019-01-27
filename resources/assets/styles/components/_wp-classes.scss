@@ -85,12 +85,20 @@
 
 /** Images */
 .featured-image {
+  transition: all 0.15s;
+
   &.full-bleed {
     @apply my-4 overflow-hidden;
 
     max-height: 1200px;
     margin-left: -33.33%;
     margin-right: -33.33%;
+  }
+
+  &.index {
+    &:hover {
+      @apply opacity-75;
+    }
   }
 
   img {

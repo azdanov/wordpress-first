@@ -23,5 +23,10 @@
 @include('partials.footer')
 @php(wp_footer())
 
+{{-- TODO: remove debug --}}
+<script>
+  console.log("Partial: {!! get_post_type() !!}")
+</script>
+
 </body>
 </html>

@@ -104,6 +104,7 @@ add_action(
          * @see https://developer.wordpress.org/reference/functions/add_image_size/
          */
         add_image_size('first-full-bleed', 2000, 1200, true);
+        add_image_size('first-index', 1000, 550, true);
 
         /**
          * Enable HTML5 markup support.
@@ -175,10 +176,6 @@ add_action('widgets_init', static function (): void {
     register_sidebar([
         'name' => __('Blog', 'first'),
         'id' => 'sidebar-blog',
-    ] + $config);
-    register_sidebar([
-        'name' => __('Footer', 'first'),
-        'id' => 'sidebar-footer',
     ] + $config);
 });
 
