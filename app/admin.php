@@ -20,6 +20,12 @@ add_action('customize_register', static function (WP_Customize_Manager $wp_custo
             bloginfo('name');
         },
     ]);
+
+    // Remove colors
+    $wp_customize->remove_section('colors');
+
+    // Hide custom css
+    $wp_customize->remove_section('custom_css');
 });
 
 /**
