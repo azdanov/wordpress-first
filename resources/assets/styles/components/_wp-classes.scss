@@ -95,13 +95,19 @@
     margin-right: -33.33%;
   }
 
-  &.index {
-    &:hover {
-      @apply opacity-75;
-    }
+  img {
+    @apply inline-block m-0 mx-auto;
   }
 
-  img {
-    @apply block m-0 mx-auto;
+  &.index {
+    @apply flex justify-center;
+
+    a {
+      @apply border-none;
+    }
+
+    & img:hover {
+      @apply opacity-75;
+    }
   }
 }
