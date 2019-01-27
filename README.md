@@ -34,3 +34,4 @@ Make sure all dependencies have been installed before moving on:
 
 * [Sage documentation](https://roots.io/sage/docs/)
 * [Controller documentation](https://github.com/soberwp/controller#usage)
+* [Tailwind CSS documentation](https://tailwindcss.com/docs/what-is-tailwind/)
