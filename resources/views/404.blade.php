@@ -4,9 +4,12 @@
   @include('partials.page-header')
 
   @if (!have_posts())
-    <div class="alert alert-warning">
+    <p>
       {{ __('Sorry, but the page you were trying to view does not exist.', 'first') }}
-    </div>
-    {!! get_search_form(false) !!}
+    </p>
+    <p class="mb-5">
+      {{ __('Try using the search:', 'first') }}
+    </p>
+    @php(get_search_form())
   @endif
 @endsection

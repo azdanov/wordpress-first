@@ -1,10 +1,10 @@
 $margin-left: 70px;
 
 .comments {
-  @apply font-pt-sans;
+  @apply font-pt-sans mt-8;
 
   > h2 {
-    @apply text-2xl text-grey-darker;
+    @apply text-2xl text-grey-darker font-normal;
   }
 
   nav {
@@ -16,8 +16,14 @@ $margin-left: 70px;
   }
 }
 
+.comment-author {
+  .url {
+    @apply font-normal;
+  }
+}
+
 .comment-list {
-  @apply list-reset mt-8;
+  @apply list-reset mt-6;
 }
 
 .comment-list ol {
@@ -99,13 +105,17 @@ $margin-left: 70px;
 }
 
 .comment-reply-title {
-  @apply mb-0 text-grey-darker;
+  @apply mb-0 text-grey-darker font-normal;
 }
 
 .comment-form {
   .comment-notes,
   .logged-in-as {
-    @apply text-base mb-3 text-grey-darker;
+    @apply mb-3 text-grey-darker;
+
+    a {
+      @apply text-base;
+    }
   }
 
   .required {

@@ -29,7 +29,7 @@ final class App extends Controller
 
     public function showBlogSidebar(): bool
     {
-        if (is_front_page() || is_page() || is_404()) {
+        if (is_front_page() || is_page()) {
             return false;
         }
 

@@ -1,0 +1,23 @@
+.error404 {
+  .search-form {
+    @apply flex items-baseline;
+
+    label {
+      @apply mb-3;
+
+      input {
+        @apply mb-0 rounded-none border-t-0 border-l-2 border-r-0 border-b-0;
+      }
+    }
+
+    .search-submit {
+      @apply py-2 px-2 bg-transparent rounded-none text-sm cursor-pointer text-grey-dark leading-none border border-grey;
+
+      transition: all 0.15s;
+
+      &:hover {
+        @apply border-grey-dark text-grey-darker;
+      }
+    }
+  }
+}
