@@ -2,7 +2,7 @@
 
 A WordPress theme made with Sage. [Live version](https://wordpress-first.netlify.com/).
 
-![Theme Image](./resources/screenshot.png)
+<img width="1392" alt="screenshot 2019-01-27 at 21 03 38" src="https://user-images.githubusercontent.com/6123841/51805525-0c0ad580-2277-11e9-8c99-7b707af7f0ef.png">
 
 See a working setup example at [roots-example-project](https://github.com/roots/roots-example-project.com/).
 
